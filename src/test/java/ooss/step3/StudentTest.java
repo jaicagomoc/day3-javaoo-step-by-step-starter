@@ -38,7 +38,7 @@ public class StudentTest {
         assertFalse(isInKlass1);
         assertTrue(isInKlass2);
     }
-//
+
     @Test
     public void should_return_message_with_name_age_and_class_when_introduce_given_student_is_in_a_class() {
         Student tom = new Student(1, "Tom", 18);

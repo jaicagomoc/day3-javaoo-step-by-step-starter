@@ -3,24 +3,25 @@ package ooss;
 import java.util.Objects;
 
 public class Klass {
-
-    private final int i;
-
-    public Klass(int i) {
-
-        this.i = i;
+    private final int number;
+    public Klass(int number){
+        this.number = number;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Klass klass = (Klass) o;
-        return i == klass.i;
+    public boolean equals(Object otherItem) {
+        if (this == otherItem) return true;
+        if (otherItem == null || getClass() != otherItem.getClass()) return false;
+        Klass klass = (Klass) otherItem;
+        return number == klass.number;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(i);
+        return Objects.hash(number);
+    }
+
+    public Object getNumber() {
+        return number;
     }
 }
