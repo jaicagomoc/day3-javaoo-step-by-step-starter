@@ -22,7 +22,6 @@ public class Person {
         Person person = (Person) otherItem;
         return id == person.id;
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(id);
