@@ -14,16 +14,16 @@ public class Teacher extends Person {
         assignedClasses = new ArrayList<>();
     }
     @Override
-
     public String introduce() {
         StringBuilder printOutput = new StringBuilder();
-        printOutput.append("My name is ").append(name).append(". I am").append(age)
+        printOutput.append("My name is ").append(name).append(". I am ").append(age)
                 .append(" years old. I am a teacher.");
+
         if (!assignedClasses.isEmpty()){
             String classesString = assignedClasses.stream()
                     .map(klass -> "" + klass.getNumber())
                     .collect(Collectors.joining(", "));
-            printOutput.append("I teach Class ").append(classesString).append(".");
+            printOutput.append(" I teach Class ").append(classesString).append(".");
         }
         return printOutput.toString();
     }
@@ -37,11 +37,11 @@ public class Teacher extends Person {
 
     public boolean isTeaching(Student student) {
         for (Klass klass : assignedClasses) {
-            if (student.join(klass)) {
+            if (student.isIn(klass)) {
                 return true;
             }
         }
-        return true;
+        return false;
     }
 
 }

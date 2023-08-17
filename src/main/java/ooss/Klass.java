@@ -27,12 +27,17 @@ public class Klass {
     }
 
     public void assignLeader(Student king) {
-        leader = king != null ? king : null;
-        if (leader == null) {
+        if (king != null && king.isIn(this)) {
+            leader = king;
+        } else {
             System.out.println("It is not one of us.");
         }
     }
     public boolean isLeader(Student tom) {
         return leader != null && leader.equals(tom);
+    }
+
+    public Student getLeader() {
+        return leader;
     }
 }

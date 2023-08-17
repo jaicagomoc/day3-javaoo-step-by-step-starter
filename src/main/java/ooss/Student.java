@@ -1,7 +1,8 @@
 package ooss;
 
-public class Student extends Person {
+import java.util.stream.Collectors;
 
+public class Student extends Person {
     private Klass klass;
     public Student(int id, String name, int age) {
         super(id, name, age);
@@ -9,7 +10,16 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
-        return super.introduce()+ " I am a student. I am in class " + klass.getNumber() + ".";
+        StringBuilder printOutput = new StringBuilder();
+        printOutput.append(" I am a student.");
+        if (klass != null) {
+            if (klass.getLeader() == this) {
+                printOutput.append(" I am the leader of class ").append(klass.getNumber()).append(".");
+            } else {
+                printOutput.append(" I am in class ").append(klass.getNumber()).append(".");
+            }
+        }
+        return super.introduce() + printOutput.toString();
     }
 
     public boolean join(Klass klass) {
