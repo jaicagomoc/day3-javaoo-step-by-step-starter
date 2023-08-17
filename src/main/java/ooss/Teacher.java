@@ -1,14 +1,11 @@
 package ooss;
 
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Teacher extends Person {
-    private Klass klass;
-    private List<Klass> assignedClasses = new ArrayList<>();;
+    private final List<Klass> assignedClasses;
     public Teacher(int id, String name, int age) {
         super(id, name, age);
         assignedClasses = new ArrayList<>();
@@ -27,6 +24,7 @@ public class Teacher extends Person {
         }
         return printOutput.toString();
     }
+
     public void assignTo(Klass klass) {
         assignedClasses.add(klass);
     }
@@ -35,9 +33,9 @@ public class Teacher extends Person {
         return assignedClasses.contains(klass);
     }
 
-    public boolean isTeaching(Student student) {
+    public boolean isTeaching(Student teacher) {
         for (Klass klass : assignedClasses) {
-            if (student.isIn(klass)) {
+            if (teacher.isIn(klass)) {
                 return true;
             }
         }

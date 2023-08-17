@@ -1,7 +1,5 @@
 package ooss;
 
-import java.util.stream.Collectors;
-
 public class Student extends Person {
     private Klass klass;
     public Student(int id, String name, int age) {
@@ -19,7 +17,7 @@ public class Student extends Person {
                 printOutput.append(" I am in class ").append(klass.getNumber()).append(".");
             }
         }
-        return super.introduce() + printOutput.toString();
+        return super.introduce() + printOutput;
     }
 
     public boolean join(Klass klass) {

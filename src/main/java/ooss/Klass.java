@@ -5,6 +5,8 @@ import java.util.Objects;
 public class Klass {
     private final int number;
     private Student leader;
+    private Teacher teacher;
+
     public Klass(int number){
         this.number = number;
     }
@@ -40,4 +42,6 @@ public class Klass {
     public Student getLeader() {
         return leader;
     }
+
+
 }

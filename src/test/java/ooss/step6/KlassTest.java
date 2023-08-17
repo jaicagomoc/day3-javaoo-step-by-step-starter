@@ -12,10 +12,10 @@ import java.io.PrintStream;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 
-public class KlassTest {
+//public class KlassTest {
 
 //    private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-//
+
 //    @BeforeEach
 //    public void setup() {
 //        System.setOut(new PrintStream(outContent));
@@ -34,7 +34,7 @@ public class KlassTest {
 //
 //        assertThat(systemOut(), containsString("I am Jerry, teacher of Class 2. I know Tom become Leader."));
 //    }
-//
+
 //    @Test
 //    public void should_print_message_when_assign_leader_given_another_student_is_in_the_class() {
 //        Klass klass = new Klass(2);
@@ -52,4 +52,4 @@ public class KlassTest {
 //    private String systemOut() {
 //        return outContent.toString();
 //    }
-}
+//}
